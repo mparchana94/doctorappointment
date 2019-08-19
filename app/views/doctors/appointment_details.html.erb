@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Patient Name </th>
+      <th>Age </th>
+      <th>Symptoms</th>
+      <th>Appointment date </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctor.appointments.each do |app| %>
+    <tr>
+      <td><%= app.patient.name%></td>
+      <td><%= app.patient.age%></td>
+      <td><%= app.patient.symptoms%></td>
+      <td><%= app.appointment_date %></td>
+      <td><%= link_to 'Approve', edit_appointment_path(app.id) %></td>
+    </tr>
+  <% end %>  
+  </tbody>
+</table>

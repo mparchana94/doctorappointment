@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Doctor Name </th>
+      <th>Symptoms</th>
+      <th>Appointment date </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient.appointments.each do |pat| %>
+      <tr>
+        <td><%= pat.doctor.name%></td>
+        <td><%= pat.patient.symptoms%></td>
+        <td><%= pat.appointment_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

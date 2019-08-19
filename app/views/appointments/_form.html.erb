@@ -1,0 +1,46 @@
+<%= form_with(model: appointment, local: true) do |form| %>
+  <% if appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+      <% appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.number_field :patient_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :specialization_id %>
+    <%= form.select 'specialization_id', options_for_select(Specialization.all.collect{ |u| [u.name, u.id] }) %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :doctor_id %>
+    <%= form.select 'doctor_id', options_for_select(Doctor.all.collect{ |u| [u.name, u.id] }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :appointment_date %>
+    <%#= form.text_field :date, :class => 'datepicker' %>
+    <%= form.datetime_select :appointment_date %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<!-- <script type="text/javascript">
+  $(function() {
+    $('.datepicker').datepicker()
+  });
+</script> -->

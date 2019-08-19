@@ -1,0 +1,31 @@
+<h1>Editing Appointment</h1>
+<%= form_with(model: @appointment, local: true) do |form| %>
+  <div class="field">
+    <%= form.hidden_field :patient_id %>
+    <% form.number_field :patient_id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :specialization_id %>
+    <% form.select 'specialization_id', options_for_select(Specialization.all.collect{ |u| [u.name, u.id] }) %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :doctor_id %>
+    <% form.select 'doctor_id', options_for_select(Doctor.all.collect{ |u| [u.name, u.id] }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :appointment_date %>
+    <%= form.datetime_select :appointment_date %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Show', @appointment %> |
+<%= link_to 'Back', appointments_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @patient.age %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @patient.email %>
+</p>
+
+<p>
+  <strong>Mobileno:</strong>
+  <%= @patient.mobileNo %>
+</p>
+
+<p>
+  <strong>Referred by:</strong>
+  <%= @patient.referred_by %>
+</p>
+
+<p>
+  <strong>Symptoms:</strong>
+  <%= @patient.symptoms %>
+</p>
+
+<%# @patient.appointments.each do |pat| %>
+  <!-- <p> -->
+    <!-- <strong>Appointment date:</strong> -->
+    <!-- <td><%#= pat.appointment_date %></td> -->
+  <!-- </p> -->
+<%# end %>
+<div class="actions">
+  <%= link_to 'My Appointment', my_appointment_patient_path(@patient) %>
+</div>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>

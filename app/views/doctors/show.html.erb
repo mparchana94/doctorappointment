@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @doctor.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @doctor.age %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @doctor.email %>
+</p>
+
+<p>
+  <strong>Specialization:</strong>
+  <%= @doctor.specialization.try(:name) %>
+</p>
+
+  <tbody>
+    <%# @doctor.appointments.each do |app| %>
+      <!-- <p> -->
+        <!-- <strong>Appointment date:</strong> -->
+        <!-- <td><%#= app.appointment_date %></td> -->
+      <!-- </p> -->
+    <%# end %>
+    <div class="actions">
+      <%= link_to 'Appointment', appointment_details_doctor_path(@doctor) %>
+    </div>
+  </tbody>
+
+
+<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
+<%= link_to 'Back', doctors_path %>
+
+
