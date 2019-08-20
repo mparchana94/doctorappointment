@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="col">
+    <div class="col-sm-4">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.label :age %>
+      <%= form.number_field :age %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.label :specialization_id %>
+      <%= form.select 'specialization_id', options_for_select(Specialization.all.collect{ |u| [u.name, u.id] }) %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :specialization_id %>
-    <%= form.select 'specialization_id', options_for_select(Specialization.all.collect{ |u| [u.name, u.id] }) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="col-sm-4">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

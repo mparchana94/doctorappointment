@@ -11,37 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="col">
+    <div class="col-sm-4">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.label :age %>
+      <%= form.number_field :age %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.label :mobileNo %>
+      <%= form.number_field :mobileNo %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.label :referred_by %>
+      <%= form.text_field :referred_by %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= form.label :symptoms %>
+      <%= form.text_area :symptoms %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mobileNo %>
-    <%= form.number_field :mobileNo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :referred_by %>
-    <%= form.text_field :referred_by %>
-  </div>
-
-  <div class="field">
-    <%= form.label :symptoms %>
-    <%= form.text_area :symptoms %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="col-sm-4">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

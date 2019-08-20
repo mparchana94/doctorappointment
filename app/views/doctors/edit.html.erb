@@ -2,5 +2,7 @@
 
 <%= render 'form', doctor: @doctor %>
 
-<%= link_to 'Show', @doctor %> |
-<%= link_to 'Back', doctors_path %>
+<div class="mb-4 mt-2"> 
+  <%= link_to 'Show', @doctor, class: "btn btn-success btn-sm" %> |
+  <%= link_to 'Back', doctors_path, class: "btn btn-info btn-sm" %>
+</div>

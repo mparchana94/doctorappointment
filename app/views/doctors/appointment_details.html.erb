@@ -1,22 +1,38 @@
-<table>
-  <thead>
-    <tr>
-      <th>Patient Name </th>
-      <th>Age </th>
-      <th>Symptoms</th>
-      <th>Appointment date </th>
-    </tr>
-  </thead>
+<h4><center>Appointment Details</h4></center>
 
-  <tbody>
-    <% @doctor.appointments.each do |app| %>
-    <tr>
-      <td><%= app.patient.name%></td>
-      <td><%= app.patient.age%></td>
-      <td><%= app.patient.symptoms%></td>
-      <td><%= app.appointment_date %></td>
-      <td><%= link_to 'Approve', edit_appointment_path(app.id) %></td>
-    </tr>
-  <% end %>  
-  </tbody>
+<table>
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Patient Name </th>
+          <th>Age </th>
+          <th>Symptoms</th>
+          <th>Appointment date </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @doctor.appointments.each do |app| %>
+        <tr>
+          <td><%= app.patient.name%></td>
+          <td><%= app.patient.age%></td>
+          <td><%= app.patient.symptoms%></td>
+          <td><%= app.appointment_date.strftime('%A, %B %d %I %M %p') %></td>
+          <%#= f.text_field :due_date, :id => "datepicker", :value => Date.today %>
+          <!-- <td><%#= link_to 'Approve', edit_appointment_path(app.id), class: "btn btn-success btn-sm" %></td> -->
+           <td><%= link_to 'Approve', approve_appointment_path(app.id), class: "btn btn-success btn-sm" %></td>
+        </tr>
+      <% end %>  
+      </tbody>
+    </table>
+  </div>
 </table>
+
+<div class="mb-4 mt-2"> 
+  <%= link_to 'Back', doctors_path, class: "btn btn-info btn-sm" %>
+</div>
+
+<!-- <script type="text/javascript">
+  $('#datepicker').datepicker({format: 'yyyy-mm-dd'});
+</script> -->

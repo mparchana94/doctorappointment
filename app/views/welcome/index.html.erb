@@ -1,13 +1,32 @@
-<h1>Doctor Appointment</h1>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>DoctorAppointments</h1>
+</div>
 
 <p id="notice"><%= notice %></p>
 
+<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Clinic</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/appointments">Appointment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/specializations">Specialization</a>
+      </li>    
+    </ul>
+  </div>  
+</nav> -->
+
 <br>
 <p>
-  <%= link_to 'Sing Up/Doctor', new_doctor_path %>
+  <%= link_to 'Sing Up/Doctor', new_doctor_path, class: "btn btn-primary btn-lg"%>
 </p>
 
 <p>
-  <%= link_to 'Sing Up/Patient', new_patient_path %>
+  <%= link_to 'Sing Up/Patient', new_patient_path, class: "btn btn-primary btn-lg" %>
 </p>
 

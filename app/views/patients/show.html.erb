@@ -1,34 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @patient.name %>
-</p>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th colspan="2"><center>Patient Details</center></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Name:</strong></td>
+        <td><%= @patient.name %></td>
+      </tr>
+      <tr>
+        <td><strong>Age:</strong></td>
+        <td><%= @patient.age %></td>
+      </tr>
 
-<p>
-  <strong>Age:</strong>
-  <%= @patient.age %>
-</p>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td><%= @patient.email %></td>
+      </tr>
 
-<p>
-  <strong>Email:</strong>
-  <%= @patient.email %>
-</p>
+      <tr>
+        <td><strong>Mobileno:</strong></td>
+        <td><%= @patient.mobileNo %></td>
+      </tr>
 
-<p>
-  <strong>Mobileno:</strong>
-  <%= @patient.mobileNo %>
-</p>
+      <tr>
+        <td><strong>Referred by:</strong></td>
+        <td><%= @patient.referred_by %></td>
+      </tr>
 
-<p>
-  <strong>Referred by:</strong>
-  <%= @patient.referred_by %>
-</p>
-
-<p>
-  <strong>Symptoms:</strong>
-  <%= @patient.symptoms %>
-</p>
+      <tr>
+        <td><strong>Symptoms:</strong></td>
+        <td><%= @patient.symptoms %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <%# @patient.appointments.each do |pat| %>
   <!-- <p> -->
@@ -37,8 +47,10 @@
   <!-- </p> -->
 <%# end %>
 <div class="actions">
-  <%= link_to 'My Appointment', my_appointment_patient_path(@patient) %>
+  <%= link_to 'My Appointment', my_appointment_patient_path(@patient), class: "btn btn-info" %>
 </div>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<div class="mb-4 mt-2"> 
+  <%= link_to 'Edit', edit_patient_path(@patient), class: "btn btn-secondary btn-sm" %> |
+  <%= link_to 'Back', patients_path, class: "btn btn-info btn-sm" %>
+</div>

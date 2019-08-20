@@ -1,19 +1,30 @@
-<table>
-  <thead>
-    <tr>
-      <th>Doctor Name </th>
-      <th>Symptoms</th>
-      <th>Appointment date </th>
-    </tr>
-  </thead>
+<h4><center>Appointment Details</h4></center>
 
-  <tbody>
-    <% @patient.appointments.each do |pat| %>
-      <tr>
-        <td><%= pat.doctor.name%></td>
-        <td><%= pat.patient.symptoms%></td>
-        <td><%= pat.appointment_date %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<table>
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Doctor Name </th>
+          <th>Symptoms</th>
+          <th>Appointment date </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @patient.appointments.each do |pat| %>
+          <tr>
+            <td><%= pat.doctor.name%></td>
+            <td><%= pat.patient.symptoms%></td>
+            <td><%= pat.appointment_date %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </table>
+
+<div class="mb-4 mt-2"> 
+  <%= link_to 'Back', patients_path, class: "btn btn-info btn-sm" %>
+</div>
+

@@ -3,33 +3,41 @@
 <h1>Patients</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Email</th>
-      <th>Mobileno</th>
-      <th>Referred by</th>
-      <th>Symptoms</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+ <div class="container">           
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+          <th>Mobileno</th>
+          <th>Referred by</th>
+          <th>Symptoms</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @patients.each do |patient| %>
-      <tr>
-        <td><%= patient.name %></td>
-        <td><%= patient.age %></td>
-        <td><%= patient.email %></td>
-        <td><%= patient.mobileNo %></td>
-        <td><%= patient.referred_by %></td>
-        <td><%= patient.symptoms %></td>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+      <tbody>
+        <% @patients.each do |patient| %>
+          <tr>
+            <td><%= patient.name %></td>
+            <td><%= patient.age %></td>
+            <td><%= patient.email %></td>
+            <td><%= patient.mobileNo %></td>
+            <td><%= patient.referred_by %></td>
+            <td><%= patient.symptoms %></td>
+            <td>
+              <div class="btn-stack">
+                <%= link_to 'Show', patient, class: "btn btn-success btn-sm" %>
+                <%= link_to 'Edit', edit_patient_path(patient), class: "btn btn-secondary btn-sm" %>
+                <%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger btn-sm" %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </table>
 
 <br>

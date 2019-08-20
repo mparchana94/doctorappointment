@@ -21,7 +21,6 @@
     <%= form.select 'specialization_id', options_for_select(Specialization.all.collect{ |u| [u.name, u.id] }) %>
   </div>
 
-
   <div class="field">
     <%= form.label :doctor_id %>
     <%= form.select 'doctor_id', options_for_select(Doctor.all.collect{ |u| [u.name, u.id] }) %>
@@ -29,18 +28,15 @@
 
   <div class="field">
     <%= form.label :appointment_date %>
-    <%#= form.text_field :date, :class => 'datepicker' %>
+    <%#= form.text_field :appointment_date, :id => "datepicker", :value => Date.today %>
     <%= form.datetime_select :appointment_date %>
-
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
 
 <!-- <script type="text/javascript">
-  $(function() {
-    $('.datepicker').datepicker()
-  });
+  $('#datepicker').datepicker({format: 'yyyy-mm-dd'});
 </script> -->
