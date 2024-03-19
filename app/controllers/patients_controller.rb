@@ -13,7 +13,6 @@ class PatientsController < ApplicationController
   end
 
   def my_appointment
-    
   end
 
   # GET /patients/new
@@ -73,6 +72,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:name, :age, :email, :mobileNo, :referred_by, :symptoms)
+      params.require(:patient).permit(:name, :age, :email, :mobileNo, :referred_by, :symptoms, patient_documents_attributes: [:file, :uploaded_at])
     end
 end
